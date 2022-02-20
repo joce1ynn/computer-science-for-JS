@@ -51,3 +51,60 @@ foo();
 // the event loop must first check the call stack to see if there are any more tasks to run.
 // Once the call stack has finished evaluating all the code that is available and becomes idle,
 //  the event loop allows the callback function to push onto the call stack,
+
+// #5: a closure is a function that contains references to its surrounding state.
+function counter() {
+  let count = 0;
+  return function () {
+    return count++;
+  };
+}
+
+const increment = counter();
+increment(); //=> 0
+
+for (var i = 0; i < 5; i++) {
+  setTimeout(function () {
+    console.log(i++);
+  }, 1000);
+}
+
+console.log(i); //=> 5 5 6 7 8 9
+
+for (var i = 0; i < 5; i++) {
+  (function (x) {
+    setTimeout(function () {
+      console.log(x++);
+    }, 1000);
+  })(i);
+}
+
+console.log(i); //=> 5 0 1 2 3 4
+
+// #6: factory function
+class Tiger {
+  constructor() {
+    this.noise = "roar";
+  }
+  sound() {
+    console.log(this.noise);
+  }
+}
+
+const simba = new Tiger();
+simba.sound(); //=> "roar"
+
+const tiger = function () {
+  const noise = "roar";
+  return {
+    sound: function () {
+      console.log(noise);
+    },
+  };
+};
+
+const tigger = tiger();
+tigger.sound(); //=> "roar"
+
+// Inheritance is when you design your types based on what they are,
+// Composition is when you design your types based on what they can do.
