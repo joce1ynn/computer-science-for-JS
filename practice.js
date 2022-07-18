@@ -67,9 +67,15 @@ for (var i = 0; i < 5; i++) {
   setTimeout(function () {
     console.log(i++);
   }, 1000);
-}
+} // => 5 6 7 8 9
 
-console.log(i); //=> 5 5 6 7 8 9
+console.log(i); //=> 5 
+
+for (let i = 0; i < 5; i++) {
+  setTimeout(function () {
+    console.log(i++);
+  }, 1000);
+} //=> 0 1 2 3 4
 
 for (var i = 0; i < 5; i++) {
   (function (x) {
