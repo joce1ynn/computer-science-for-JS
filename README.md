@@ -27,3 +27,9 @@ Module 17-Computer Science for JavaScript
 
 - The heap used in JavaScript is called the memory heap.
 - The memory heap is where data is stored.
+
+### 1.4 Closures
+Benefits: 
+- Prevent polluting the global namespace that can cause collisions due to name conflicts
+- Accidental modifications of global variables
+- Performance gains when accessing local variables vs. lookups on the global scope
