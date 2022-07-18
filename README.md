@@ -29,9 +29,15 @@ Module 17-Computer Science for JavaScript
 - The memory heap is where data is stored.
 
 ### 1.4 Closures
+
 Closure is "when you have a function defined inside of another function, that inner function has access to the variables and scope of the outer function even if the outer function finishes executing and those variables are no longer accessible outside of that function."
 
-Benefits: 
+Benefits:
+
 - Prevent polluting the global namespace that can cause collisions due to name conflicts
 - Accidental modifications of global variables
 - Performance gains when accessing local variables vs. lookups on the global scope
+
+### 1.5 Factory functions
+
+A factory function is a function that returns a new object.

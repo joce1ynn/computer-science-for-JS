@@ -114,3 +114,4 @@ tigger.sound(); //=> "roar"
 
 // Inheritance is when you design your types based on what they are,
 // Composition is when you design your types based on what they can do.
+
