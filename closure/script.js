@@ -15,6 +15,7 @@
 // -----------------method 2 with closure-----------------
 // 通过以这种方式依赖闭包，我们还能够最大限度地减少与 DOM 的交互量。不再需要读取和写入 HTML 属性。
 const buttonEl = document.getElementById("my-button");
+
 const clickHandler = function () {
   let count = 0;
 
@@ -23,6 +24,7 @@ const clickHandler = function () {
     this.textContent = `Clicks: ${count}`;
   };
 };
+
 buttonEl.addEventListener("click", clickHandler());
 
 // 闭包方法的另一个好处是，当您向页面添加更多按钮时，您不会使用其他变量污染全局命名空间。

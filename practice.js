@@ -69,7 +69,7 @@ for (var i = 0; i < 5; i++) {
   }, 1000);
 } // => 5 6 7 8 9
 
-console.log(i); //=> 5 
+console.log(i); //=> 5
 
 for (let i = 0; i < 5; i++) {
   setTimeout(function () {
@@ -114,4 +114,24 @@ tigger.sound(); //=> "roar"
 
 // Inheritance is when you design your types based on what they are,
 // Composition is when you design your types based on what they can do.
+
+// #7. lose "this" context
+const robot = {
+  name: "rumba",
+  clean() {
+    alert(`${this.name} is now cleaning`);
+  },
+};
+
+// arrow function binds this to the parent scope instead of referencing the <button> element.
+const clickHandler1 = () => {
+  this.textContent = "Clicked!";
+};
+
+// wont lose this
+const clickHandler2 = function () {
+  this.textContent = "Clicked!";
+};
+
+buttonEl.addEventListener("click", robot.clean);
 
