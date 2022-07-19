@@ -135,3 +135,11 @@ const clickHandler2 = function () {
 
 buttonEl.addEventListener("click", robot.clean);
 
+// #8. constructor
+function User(first, last) {
+  this.first = first;
+  this.last = last;
+}
+
+var user1 = new User("Braden", "Rogers");
+var user2 = new User("Wenwen", "Tian");

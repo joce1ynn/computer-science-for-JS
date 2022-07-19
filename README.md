@@ -41,3 +41,9 @@ Benefits:
 ### 1.5 Factory functions
 
 A factory function is a function that returns a new object.
+
+
+### 1.6 Constructors functions
+The constructor is a special method of a class for creating and initializing an object instance of that class.
+
+In a constructor function this does not have a value. It is a substitute for the new object. The value of this will become the new object when a new object is created.
