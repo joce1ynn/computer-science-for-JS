@@ -42,8 +42,24 @@ Benefits:
 
 A factory function is a function that returns a new object.
 
-
 ### 1.6 Constructors functions
+
 The constructor is a special method of a class for creating and initializing an object instance of that class.
 
 In a constructor function this does not have a value. It is a substitute for the new object. The value of this will become the new object when a new object is created.
+
+## 2. Algorithms
+
+Algorithms are a series of steps to solve a problem or perform an action
+
+### 2.1 Common Search Algorithms
+
+<b>Linear Search Algorithm</b>
+A linear search looks at every index in sequential order. It works, but a lot of time is wasted looking at indexes that don't matter.
+
+One optimization you could make is to add a `break` or `return` statement once the index is found. This helps reduce the time needed for numbers at the beginning of the array.
+
+**Binary Search Algorithm**
+A binary search works by continually dividing the data in half based on whether the number you're looking for is greater or less than a chosen middle point.
+
+This only works if the data is sorted in numerical order. 

@@ -143,3 +143,30 @@ function User(first, last) {
 
 var user1 = new User("Braden", "Rogers");
 var user2 = new User("Wenwen", "Tian");
+
+// #9. binary search code example
+const data = [12, 23, 38, 40, 54, 62, 71, 87, 99];
+
+const binarySearch = (arr, num) => {
+  let left = 0;
+  let right = arr.length - 1;
+  //The Math.floor() function returns the largest integer less than or equal to a given number.
+  let middle = Math.floor((left + right) / 2);
+
+  // range overlapped, so never found number
+  if (left > right) {
+    return -1;
+  } else if (num === arr[middle]) {
+    return middle;
+  } else if (num < arr[middle]) {
+    // call again with a new right value
+    right = middle - 1;
+    return binarySearch(arr, num);
+  } else if (num > arr[middle]) {
+    // call again with a new left value
+    left = middle + 1;
+    return binarySearch(arr, num);
+  }
+};
+
+console.log(binarySearch(data, 38)); // bring right down to 4
