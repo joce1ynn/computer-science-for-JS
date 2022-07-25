@@ -54,6 +54,10 @@ Algorithms are a series of steps to solve a problem or perform an action.
 
 **Benchmarking** is the act of measuring the performance of a process
 
+```
+npm i benchmark.js
+```
+
 ### 2.1 Big O Notation
 
 **Big O** refers to a special notation used to classify an algorithm's time complexity or growth rate. In other words, it ties how efficiently (or inefficiently) an algorithm performs to the increasing size of the data being inputted.
@@ -68,13 +72,13 @@ The binary search's complexity would be written as **O(log n)**.
 
 ### 2.2 Search Algorithms
 
-#### Linear Search Algorithm
+#### Linear Search Algorithm -- O(n)
 
 A linear search looks at every index in sequential order. It works, but a lot of time is wasted looking at indexes that don't matter.
 
 One optimization you could make is to add a `break` or `return` statement once the index is found. This helps reduce the time needed for numbers at the beginning of the array.
 
-#### Binary Search Algorithm
+#### Binary Search Algorithm -- O(log n)
 
 A binary search works by continually dividing the data in half based on whether the number you're looking for is greater or less than a chosen middle point.
 
@@ -82,8 +86,12 @@ This only works if the data is sorted in numerical order.
 
 ### 2.3 Sort Algorithms
 
-#### Bubble Sort
+#### Bubble Sort -- O(n2)
 
 Bubble sort involves comparing two indexes side-by-side. If the value of the index on the right is smaller, then the indexes should be swapped.
 
 The complexity of bubble sort is actually O(n2). Bubble sort is not a great algorithm after all.
+
+#### Quick Sort -- O(n log n)
+
+Quick sort works by picking a pivot point from the array of numbers to be sorted, then creating two new arrays and pushing elements into one or the other based on if they are greater or less than the pivot's value.
