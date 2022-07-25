@@ -1,4 +1,5 @@
 const Benchmark = require("benchmark");
+// --------------------search----------------------------
 // const { linearSearch, binarySearch } = require("./search");
 
 // const numbers = [];
@@ -36,11 +37,12 @@ const Benchmark = require("benchmark");
 //   })
 //   .run();
 
-const { bubbleSort } = require("./sort");
+// -------------------------- sort--------------------------------------
+const { bubbleSort, quickSort } = require("./sort");
 
 const numbers = [];
 // random array from 1 to 100001
-for (let i = 0; i < 10000; i++) {
+for (let i = 0; i < 40000; i++) {
   numbers.push(Math.floor(Math.random() * 10000) + 1);
 }
 
@@ -52,6 +54,10 @@ suite
     //or else we'll end up simply running a benchmark on a sorted array after the first test with numbers finishes.
     const testArray = [...numbers];
     bubbleSort(testArray);
+  })
+  .add("quick sort", function () {
+    const testArray = [...numbers];
+    quickSort(testArray);
   })
   .on("complete", function () {
     this.forEach((result) =>
