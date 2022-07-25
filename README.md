@@ -92,6 +92,16 @@ Bubble sort involves comparing two indexes side-by-side. If the value of the ind
 
 The complexity of bubble sort is actually O(n2). Bubble sort is not a great algorithm after all.
 
+If the array is already sorted, bubble sort only needs to traverse it once, resulting in O(n).
+
 #### Quick Sort -- O(n log n)
 
 Quick sort works by picking a pivot point from the array of numbers to be sorted, then creating two new arrays and pushing elements into one or the other based on if they are greater or less than the pivot's value.
+
+Quick sort has an average complexity of O(n log n), but a worst case scenario of O(n2).
+
+#### Merge Sort -- O(n log n)
+
+A merge sort is similar to the quick sort in that it also divides into smaller arrays and recursively merges them back together. The difference lies in when the comparisons and merges are performed.
+
+sort() is merge sort

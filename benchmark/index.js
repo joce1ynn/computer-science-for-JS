@@ -59,6 +59,13 @@ suite
     const testArray = [...numbers];
     quickSort(testArray);
   })
+  .add("js sort", function () {
+    const testArray = [...numbers];
+    // benchmark the built-in sort method
+    testArray.sort((a, b) => {
+      return a - b;
+    });
+  })
   .on("complete", function () {
     this.forEach((result) =>
       console.log(
