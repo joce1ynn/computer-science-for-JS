@@ -50,16 +50,30 @@ In a constructor function this does not have a value. It is a substitute for the
 
 ## 2. Algorithms
 
-Algorithms are a series of steps to solve a problem or perform an action
+Algorithms are a series of steps to solve a problem or perform an action.
+
+**Benchmarking** is the act of measuring the performance of a process
 
 ### 2.1 Common Search Algorithms
 
-<b>Linear Search Algorithm</b>
+#### Linear Search Algorithm
+
 A linear search looks at every index in sequential order. It works, but a lot of time is wasted looking at indexes that don't matter.
 
 One optimization you could make is to add a `break` or `return` statement once the index is found. This helps reduce the time needed for numbers at the beginning of the array.
 
-**Binary Search Algorithm**
+#### Binary Search Algorithm
+
 A binary search works by continually dividing the data in half based on whether the number you're looking for is greater or less than a chosen middle point.
 
-This only works if the data is sorted in numerical order. 
+This only works if the data is sorted in numerical order.
+
+### 2.2 Big O Notation
+
+**Big O** refers to a special notation used to classify an algorithm's time complexity or growth rate. In other words, it ties how efficiently (or inefficiently) an algorithm performs to the increasing size of the data being inputted.
+
+**O(n)** means the complexity directly relates to the size (n) of the data. Linear search is an algorithm with a complexity of O(n).
+
+**O(1)** means there's no "n" to represent the size of the data, so the complexity never changes. This is known as constant time
+
+The binary search's complexity would be written as **O(log n)**.
