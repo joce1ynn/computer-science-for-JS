@@ -198,3 +198,18 @@ const bubbleSort = (arr) => {
 
   return arr;
 };
+
+// #11. Fibonacci Sequence
+const fibonacci = function (num) {
+  // fibonacci (6) = 8
+  // creat finonacci array first;
+  let arr = [1, 1];
+  // loop the element in the array to check each element
+  for (let i = 0; i < num; i++) {
+    arr.push(arr[i] + arr[i + 1]);
+  }
+
+  return arr[num - 1];
+};
+
+//#12. Duplicates Problem
