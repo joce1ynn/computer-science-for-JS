@@ -54,7 +54,19 @@ Algorithms are a series of steps to solve a problem or perform an action.
 
 **Benchmarking** is the act of measuring the performance of a process
 
-### 2.1 Common Search Algorithms
+### 2.1 Big O Notation
+
+**Big O** refers to a special notation used to classify an algorithm's time complexity or growth rate. In other words, it ties how efficiently (or inefficiently) an algorithm performs to the increasing size of the data being inputted.
+
+**O(n)** means the complexity directly relates to the size (n) of the data. Linear search is an algorithm with a complexity of O(n).
+
+**O(1)** means there's no "n" to represent the size of the data, so the complexity never changes. This is known as constant time
+
+The binary search's complexity would be written as **O(log n)**.
+
+**O(n2)**, AKA quadratic complexity. Nested loops almost always result in a time complexity of O(n2).
+
+### 2.2 Search Algorithms
 
 #### Linear Search Algorithm
 
@@ -68,12 +80,10 @@ A binary search works by continually dividing the data in half based on whether 
 
 This only works if the data is sorted in numerical order.
 
-### 2.2 Big O Notation
+### 2.3 Sort Algorithms
 
-**Big O** refers to a special notation used to classify an algorithm's time complexity or growth rate. In other words, it ties how efficiently (or inefficiently) an algorithm performs to the increasing size of the data being inputted.
+#### Bubble Sort
 
-**O(n)** means the complexity directly relates to the size (n) of the data. Linear search is an algorithm with a complexity of O(n).
+Bubble sort involves comparing two indexes side-by-side. If the value of the index on the right is smaller, then the indexes should be swapped.
 
-**O(1)** means there's no "n" to represent the size of the data, so the complexity never changes. This is known as constant time
-
-The binary search's complexity would be written as **O(log n)**.
+The complexity of bubble sort is actually O(n2). Bubble sort is not a great algorithm after all.
