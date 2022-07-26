@@ -32,11 +32,14 @@ Module 17-Computer Science for JavaScript
 
 Closure is "when you have a function defined inside of another function, that inner function has access to the variables and scope of the outer function even if the outer function finishes executing and those variables are no longer accessible outside of that function."
 
+![closure](./closure.png)
+
 Benefits:
 
 - Prevent polluting the global namespace that can cause collisions due to name conflicts
 - Accidental modifications of global variables
 - Performance gains when accessing local variables vs. lookups on the global scope
+- Create private declarations
 
 ### 1.5 Factory functions
 
