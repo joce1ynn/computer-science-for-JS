@@ -49,7 +49,7 @@ A factory function is a function that returns a new object.
 
 The constructor is a special method of a class for creating and initializing an object instance of that class.
 
-In a constructor function this does not have a value. It is a substitute for the new object. The value of this will become the new object when a new object is created.
+In a constructor function this does not have a value. It is a substitute for the `new` object. The value of this will become the new object when a new object is created.
 
 ## 2. Algorithms
 
