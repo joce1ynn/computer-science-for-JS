@@ -22,4 +22,25 @@ const binarySearch = (arr, num, left, right) => {
   }
 };
 
-module.exports = { linearSearch, binarySearch };
+function binarySearch2(arr, num) {
+  var left = 0;
+  var right = arr.length - 1;
+  var middle = Math.floor((left + right) / 2);
+
+  while (num !== arr[middle] && left < right) {
+    if (num < arr[middle]) {
+      right = middle - 1;
+    } else {
+      left = middle + 1;
+    }
+    middle = Math.floor((left + right) / 2);
+  }
+  if (num === arr[middle]) return middle;
+  else return -1;
+}
+
+function indexSearch(arr, num) {
+  return arr.indexOf(num);
+}
+
+module.exports = { linearSearch, binarySearch, binarySearch2, indexSearch };
