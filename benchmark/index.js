@@ -49,7 +49,7 @@ const Benchmark = require("benchmark");
 //   .run();
 
 // -------------------------- sort--------------------------------------
-const { bubbleSort, quickSort, quickSortV1 } = require("./sort");
+const { bubbleSort, quickSort, quickSortV1, radixSort } = require("./sort");
 
 const numbers = [];
 // random array from 1 to 100001
@@ -60,19 +60,23 @@ for (let i = 0; i < 40000; i++) {
 const suite = new Benchmark.Suite();
 
 suite
-  .add("bubble sort", function () {
-    //need to make a new copy of the array (testArray) for each test,
-    //or else we'll end up simply running a benchmark on a sorted array after the first test with numbers finishes.
-    const testArray = [...numbers];
-    bubbleSort(testArray);
-  })
+  // .add("bubble sort", function () {
+  //   //need to make a new copy of the array (testArray) for each test,
+  //   //or else we'll end up simply running a benchmark on a sorted array after the first test with numbers finishes.
+  //   const testArray = [...numbers];
+  //   bubbleSort(testArray);
+  // })
   .add("quick sort", function () {
     const testArray = [...numbers];
     quickSort(testArray);
   })
-  .add("different quick sort", function () {
+  .add("dif quick sort", function () {
     const testArray = [...numbers];
     quickSortV1(testArray);
+  })
+  .add("radix sort", function () {
+    const testArray = [...numbers];
+    radixSort(testArray);
   })
   .add("js sort", function () {
     const testArray = [...numbers];
