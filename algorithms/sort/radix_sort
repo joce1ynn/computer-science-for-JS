@@ -1,0 +1,57 @@
+function getDigit(num, i) {
+  return Math.floor(num / Math.pow(10, i)) % 10;
+}
+
+function digitCount(num) {
+  return num.toString().length;
+}
+
+function mostDigits(arr) {
+  let maxNum = Math.max(...arr);
+  return digitCount(maxNum);
+}
+
+// function getDigit(num, i) {
+//   return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
+// }
+
+// function digitCount(num) {
+//   if ((num = 0)) return 1;
+//   return Math.floor(Math.log10(Math.abs(num))) + 1;
+// }
+
+// function mostDigits(arr) {
+//   let maxDigits = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     maxDigits = Math.max(maxDigits, digitCount(arr[i]));
+//   }
+//   return maxDigits;
+// }
+
+function radixSort(arr) {
+  // get the max digit count
+  let maxDigitCount = mostDigits(arr);
+
+  // loop i until the max digit count
+  for (let k = 0; k < maxDigitCount; k++) {
+    // creating 10 arrays(buckets), showing digit 0,1,2,3,4,5,6,7,8,9
+    let digitBuckets = Array.from({ length: 10 }, () => []);
+
+    // loop each number
+    for (let i = 0; i < arr.length; i++) {
+      // get digit number at digit count k, k=0, digit= 3,5,7,2,5,2
+      let digit = getDigit(arr[i], k);
+
+      // push same digit to digit buckets
+      digitBuckets[digit].push(arr[i]);
+    }
+
+    // merge arrays to make the new sorted array
+    // k=0, arr= [12,9852,23,345,2345,5467]
+    arr = [].concat(...digitBuckets);
+  }
+  return arr;
+}
+
+// only works for positive numbers
+radixSort([23, 345, 5467, 12, 2345, 9852]);
