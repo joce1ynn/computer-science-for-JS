@@ -1,9 +1,9 @@
 function getDigit(num, i) {
-  return Math.floor(num / Math.pow(10, i)) % 10;
+  return parseInt(String(num)[i]);
 }
 
 function digitCount(num) {
-  return num.toString().length;
+  return String(num).length;
 }
 
 function mostDigits(arr) {
@@ -11,9 +11,9 @@ function mostDigits(arr) {
   return digitCount(maxNum);
 }
 
-// function getDigit(num, i) {
-//   return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
-// }
+function getDigit(num, i) {
+  return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
+}
 
 // function digitCount(num) {
 //   if ((num = 0)) return 1;
