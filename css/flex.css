@@ -1,0 +1,120 @@
+/* ---------------------1. 让img水平居中------------------- */
+/* div 是父元素，先改父元素 */
+/* <div><img></div> */
+div {
+  display: flex;
+  /* 水平居中， 负责主轴 */
+  justify-content: center;
+  /* 垂直居中， 负责垂轴 */
+  align-items: center;
+
+  /* flex-direction: column; 负责垂轴方向，默认为水平，column则变为垂轴水平方向，主轴垂直方向*/
+}
+
+/* ---------------------2. 让nav和div分布在两头------------------- */
+/* <header> <nav> <div> </header> */
+header {
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav {
+  /* 右边外边距自适应 */
+  margin-right: auto;
+}
+
+/* 或者设置div */
+/* header div {
+  margin-left: auto;
+} */
+
+/* ---------------------3. 两栏布局------------------- */
+/* 宽度足够则水平方向两栏布局，宽度不足则垂直方向两栏布局 */
+
+/* flex：flex-grow增长的量, flex-shrink缩减的量, flex-basis增长和缩减的基准 */
+/*  <main> <nav> <div> </main>  */
+main {
+  display: flex;
+  /* 把多出的空间往下一行移动 */
+  flex-wrap: wrap;
+}
+
+/* 为nav设置固定宽度300px 不需要增长和缩减 */
+main nav {
+  flex: 0 0 300px;
+}
+
+/* 为div设置增长量1 把剩余所有空间给div */
+main div {
+  flex: 1 0 0;
+}
+
+/* ---------------------4. 输入框input伸缩效果------------------- */
+/* <form> <input type="text> <input type="submit> </form> */
+
+form {
+  display: flex;
+}
+
+/* 点击搜索内容则变大 */
+input[type="text"]:focus {
+  background: white;
+  /* 多余空间都给搜索框 */
+  flex-grow: 1;
+}
+
+/* ---------------------5. 卡片分布及点击变大效果------------------- */
+/* <section> h1 div card123 <section> */
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+div {
+  /* 使子元素有flexbox属性 */
+  display: flex;
+  flex-wrap: wrap;
+  /* 让card各自有空间 */
+  justify-content: space-around;
+  /* 垂轴居中 */
+  align-items: center;
+}
+
+/* 每个card有宽度200px */
+div > card {
+  flex: 0 0 200px;
+}
+
+/* 使card有伸缩效果 */
+div > card:hover {
+  /* align-self为单独元素设置 */
+  align-self: stretch;
+}
+
+div {
+  /* 设置增长量1，使card区域有高度伸展 */
+  flex: 1;
+}
+
+/* ---------------------6. 固定footer------------------- */
+/* <body> header section footer </body> */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  /* 让主区域占满剩余空间 */
+  flex: 1;
+}
+
+/* 让高度为100% 把内容撑开 */
+html,
+body {
+  height: 100%;
+}
